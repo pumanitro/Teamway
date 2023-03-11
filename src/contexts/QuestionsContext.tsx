@@ -2,7 +2,7 @@ import React from "react";
 import { QuestionAnswerType } from "../../sharedTypes/Question";
 import { createCtx } from "../utils/createCtx";
 
-type QuestionContextType = {
+export type QuestionContextType = {
   question: string;
   id: string;
   answer: QuestionAnswerType;
