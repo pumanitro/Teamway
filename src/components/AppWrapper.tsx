@@ -4,8 +4,18 @@ import { AppWrapperStyles } from "./AppWrapper.styles";
 
 type AppWrapperPropsType = {
   children: React.ReactNode;
+  wrapperStyles?: React.CSSProperties;
 };
 
-export const AppWrapper: FC<AppWrapperPropsType> = ({ children }) => {
-  return <Box sx={AppWrapperStyles}>{children}</Box>;
+export const AppWrapper: FC<AppWrapperPropsType> = ({ children, wrapperStyles }) => {
+  return (
+    <Box
+      sx={{
+        ...AppWrapperStyles,
+        ...wrapperStyles,
+      }}
+    >
+      {children}
+    </Box>
+  );
 };

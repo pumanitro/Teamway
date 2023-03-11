@@ -17,6 +17,7 @@ import {
 } from "@mui/material";
 import { ROUTING_KEYS } from "../utils/routingKeys";
 import { useQuestionsContext } from "../contexts/QuestionsContext";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 export const QuestionPage = () => {
   const { id } = useParams();
@@ -74,11 +75,17 @@ export const QuestionPage = () => {
   const { question, answers, questionsAmount } = data;
 
   const isTheLastQuestion = Number(id) === questionsAmount - 1;
+  const isTheFirstQuestion = Number(id) === 0;
 
   return (
     <AppWrapper>
-      <Card sx={{ p: 2 }}>
-        <CardContent>
+      <Card sx={{ p: 2, width: "90%", m: 4, minHeight: "80vh" }}>
+        <CardContent style={{ minHeight: `calc(80vh - 100px)` }}>
+          {isTheFirstQuestion ? null : (
+            <Link to={ROUTING_KEYS.QUESTION(Number(id) - 1)} style={{ textDecoration: "none" }}>
+              <Button startIcon={<ArrowBackIcon />}>Previous</Button>
+            </Link>
+          )}
           <Typography variant="h5">{question}</Typography>
           <FormControl>
             <RadioGroup

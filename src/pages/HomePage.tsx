@@ -4,11 +4,18 @@ import { AppWrapper } from "../components/AppWrapper";
 import { ROUTING_KEYS } from "../utils/routingKeys";
 import { Link } from "react-router-dom";
 import { useQuestionsContext } from "../contexts/QuestionsContext";
+import IntroversAndExtrovert from "../assets/introvert_and_extrovert.png";
 
 export const HomePage = () => {
   const { setQuestions } = useQuestionsContext();
   return (
-    <AppWrapper>
+    <AppWrapper
+      wrapperStyles={{
+        backgroundImage: `url(${IntroversAndExtrovert})`,
+        backgroundRepeat: `no-repeat, repeat`,
+        backgroundPosition: `left`,
+      }}
+    >
       <Card sx={{ p: 2 }}>
         <CardContent>
           <Typography variant="h5">Welcome to personality test!</Typography>
