@@ -17,6 +17,9 @@
 
 > Backend runs on `http://localhost:7777`
 
+## Not done but nice to have
+[ ] authentication on backend + frontend to access API
+
 ## Available Scripts BE (Backend)
 
 ### `yarn build` 

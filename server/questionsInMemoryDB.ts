@@ -1,6 +1,6 @@
-export const questions = new Map([
+export const questionsDB = new Map([
     [
-        0,
+        "1",
         {
             question: "When you have free time, do you prefer to:",
             answers: [
@@ -18,7 +18,7 @@ export const questions = new Map([
         },
     ],
     [
-        1,
+        "2",
         {
             question: "In social situations, do you:",
             answers: [
@@ -36,7 +36,7 @@ export const questions = new Map([
         },
     ],
     [
-        2,
+        "3",
         {
             question: "Are you more of a:",
             answers: [
@@ -54,7 +54,7 @@ export const questions = new Map([
         },
     ],
     [
-        3,
+        "4",
         {
             question: "When making decisions, do you tend to rely more on:",
             answers: [
@@ -72,7 +72,7 @@ export const questions = new Map([
         },
     ],
     [
-        4,
+        "5",
         {
             question: "Would you describe yourself as:",
             answers: [

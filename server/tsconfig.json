@@ -5,6 +5,7 @@
     "target": "es6",
     "moduleResolution": "node",
     "outDir": "./dist",
+    "useUnknownInCatchVariables": false,
     "noUnusedLocals": false
   },
   "include": ["server.ts"]
