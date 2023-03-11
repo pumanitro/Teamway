@@ -5,7 +5,7 @@ import { createCtx } from "../utils/createCtx";
 export type QuestionContextType = {
   question: string;
   id: string;
-  answer: QuestionAnswerType;
+  answer: QuestionAnswerType & { id: string };
 };
 
 type QuestionsContextType = {

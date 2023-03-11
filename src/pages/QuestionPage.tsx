@@ -49,7 +49,10 @@ export const QuestionPage = () => {
         {
           id,
           question,
-          answer: answers[Number(e.target.value)],
+          answer: {
+            ...answers[Number(e.target.value)],
+            id: e.target.value,
+          },
         },
       ]);
       return;
@@ -59,7 +62,10 @@ export const QuestionPage = () => {
         {
           id,
           question,
-          answer: answers[Number(e.target.value)],
+          answer: {
+            ...answers[Number(e.target.value)],
+            id: e.target.value,
+          },
         },
       ]);
     }
@@ -79,7 +85,7 @@ export const QuestionPage = () => {
               aria-labelledby="questions-radio-group"
               name="radio-buttons-group"
               id={`question-id`}
-              defaultValue={null}
+              value={questions.find((q) => q.id === id)?.answer?.id || null}
               onChange={onAnswerChange}
             >
               {answers.map((answer, index) => (
