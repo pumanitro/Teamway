@@ -16,10 +16,12 @@ import {
   Typography,
 } from "@mui/material";
 import { ROUTING_KEYS } from "../utils/routingKeys";
+import { useQuestionsContext } from "../contexts/QuestionsContext";
 
 export const QuestionPage = () => {
   const { id } = useParams();
   const { data, isLoading } = useQuestion(id || "0");
+  const { setQuestions, questions } = useQuestionsContext();
 
   if (isLoading) {
     return (
@@ -29,13 +31,39 @@ export const QuestionPage = () => {
     );
   }
 
-  if (!data) {
+  if (!data || !id) {
     return (
       <AppWrapper>
         <Alert severity="error">Question not found!</Alert>
       </AppWrapper>
     );
   }
+
+  const onAnswerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const isAnswered = questions.find((q) => q.id === id);
+
+    if (isAnswered) {
+      const newQuestions = questions.filter((q) => q.id !== id);
+      setQuestions([
+        ...newQuestions,
+        {
+          id,
+          question,
+          answer: answers[Number(e.target.value)],
+        },
+      ]);
+      return;
+    } else {
+      setQuestions([
+        ...questions,
+        {
+          id,
+          question,
+          answer: answers[Number(e.target.value)],
+        },
+      ]);
+    }
+  };
 
   const { question, answers, questionsAmount } = data;
 
@@ -51,6 +79,7 @@ export const QuestionPage = () => {
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="female"
               name="radio-buttons-group"
+              onChange={onAnswerChange}
             >
               {answers.map((answer, index) => (
                 <FormControlLabel key={index} value={index} control={<Radio />} label={answer.answerText} />

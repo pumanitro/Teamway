@@ -62,7 +62,8 @@ Longer styles or potentially reuseable should be extracted to separated file.sty
 
 ## Not done but nice to have
 
-[ ] authentication on backend + frontend to access API
+- [ ] authentication on backend + frontend to access API
+- [ ] react-hook-form to handle forms
 
 ## Available Scripts BE (Backend)
 
