@@ -11,7 +11,7 @@ export const HomePage = () => {
   return (
     <AppWrapper>
       <Card sx={{ p: 2, width: "70%", m: 4, minHeight: "60vh" }}>
-        <CardMedia component="img" sx={{ height: "70vh" }} image={IntroversAndExtrovert} />
+        <CardMedia component="img" sx={{ height: "50vh" }} image={IntroversAndExtrovert} />
         <CardContent>
           <Typography variant="h5" sx={{ mb: 1 }}>
             Welcome to personality test!

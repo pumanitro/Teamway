@@ -26,6 +26,7 @@ import Question1 from "../assets/question_1.png";
 import Question2 from "../assets/question_2.png";
 import Question3 from "../assets/question_3.png";
 import Question4 from "../assets/question_4.png";
+import { ProgressBar } from "../components/ProgressBar";
 
 const questionImages = [Question0, Question1, Question2, Question3, Question4];
 
@@ -90,15 +91,18 @@ export const QuestionPage = () => {
   return (
     <AppWrapper>
       <Card sx={{ p: 2, width: "70%", m: 4, minHeight: "60vh" }}>
-        {isTheFirstQuestion ? null : (
-          <Link to={ROUTING_KEYS.QUESTION(Number(id) - 1)} style={{ textDecoration: "none" }}>
-            <Button startIcon={<ArrowBackIcon />}>Previous</Button>
-          </Link>
-        )}
-        <CardMedia component="img" sx={{ height: "70vh" }} image={questionImages[Number(id)]} />
+        <Stack direction="row" justifyContent="center" alignItems="center">
+          <Typography variant="subtitle2" sx={{ mb: 1, minWidth: "110px" }}>
+            Question {Number(id) + 1} / {questionsAmount}
+          </Typography>
+          <ProgressBar elMaxAmount={questionsAmount} currentEl={Number(id)} />
+        </Stack>
+        <CardMedia component="img" sx={{ height: "50vh" }} image={questionImages[Number(id)]} />
         <CardContent style={{ minHeight: `calc(10vh - 100px)` }}>
           <Stack>
-            <Typography variant="h5">{question}</Typography>
+            <Typography variant="h5" sx={{ mb: 1 }}>
+              {question}
+            </Typography>
             <FormControl>
               <RadioGroup
                 aria-labelledby="questions-radio-group"
@@ -115,15 +119,22 @@ export const QuestionPage = () => {
           </Stack>
         </CardContent>
         <CardActions sx={{ justifyContent: "flex-end" }}>
-          {isTheLastQuestion ? (
-            <Link to={ROUTING_KEYS.SCORE} style={{ textDecoration: "none" }}>
-              <Button variant="contained">Finish</Button>
-            </Link>
-          ) : (
-            <Link to={ROUTING_KEYS.QUESTION(Number(id) + 1)} style={{ textDecoration: "none" }}>
-              <Button variant="contained">Next</Button>
-            </Link>
-          )}
+          <Stack direction="row" justifyContent={isTheFirstQuestion ? "flex-end" : "space-between"} width="100%">
+            {isTheFirstQuestion ? null : (
+              <Link to={ROUTING_KEYS.QUESTION(Number(id) - 1)} style={{ textDecoration: "none" }}>
+                <Button startIcon={<ArrowBackIcon />}>Previous</Button>
+              </Link>
+            )}
+            {isTheLastQuestion ? (
+              <Link to={ROUTING_KEYS.SCORE} style={{ textDecoration: "none" }}>
+                <Button variant="contained">Finish</Button>
+              </Link>
+            ) : (
+              <Link to={ROUTING_KEYS.QUESTION(Number(id) + 1)} style={{ textDecoration: "none" }}>
+                <Button variant="contained">Next</Button>
+              </Link>
+            )}
+          </Stack>
         </CardActions>
       </Card>
     </AppWrapper>
