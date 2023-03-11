@@ -76,9 +76,10 @@ export const QuestionPage = () => {
           <Typography variant="h5">{question}</Typography>
           <FormControl>
             <RadioGroup
-              aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue="female"
+              aria-labelledby="questions-radio-group"
               name="radio-buttons-group"
+              id={`question-id`}
+              defaultValue={null}
               onChange={onAnswerChange}
             >
               {answers.map((answer, index) => (

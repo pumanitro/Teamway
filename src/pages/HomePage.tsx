@@ -3,7 +3,10 @@ import { Button, Card, CardActions, CardContent, Typography } from "@mui/materia
 import { AppWrapper } from "../components/AppWrapper";
 import { ROUTING_KEYS } from "../utils/routingKeys";
 import { Link } from "react-router-dom";
+import { useQuestionsContext } from "../contexts/QuestionsContext";
+
 export const HomePage = () => {
+  const { setQuestions } = useQuestionsContext();
   return (
     <AppWrapper>
       <Card sx={{ p: 2 }}>
@@ -15,7 +18,7 @@ export const HomePage = () => {
           </Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: "flex-end" }}>
-          <Link to={ROUTING_KEYS.QUESTION(0)} style={{ textDecoration: "none" }}>
+          <Link to={ROUTING_KEYS.QUESTION(0)} style={{ textDecoration: "none" }} onClick={() => setQuestions([])}>
             <Button variant="contained">Start test</Button>
           </Link>
         </CardActions>
