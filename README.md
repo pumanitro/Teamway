@@ -1,15 +1,19 @@
 # Teamway
 
+⚠ ReactQueryDevtools are turn on in development mode. Don't be surprised with some opened additional window.
+
 ## Technological stack
 
 ### Frontend
 
 - React
 - Typescript
+- CRA (Create React App)
 - react-query (to handle async data + caching)
 - axios
 - react-router-dom
 - MUI (Material UI) (for styling)
+- eslint + prettier + husky (because I love clean code <3)
 
 ### Backend
 
@@ -40,6 +44,20 @@
 3. `yarn dev` in `server` directory
 
 > Backend runs on `http://localhost:7777`
+
+## Directories structure
+
+- /server - backend
+- /server/api-routes - routes for API (endpoints definitions)
+- /server/services - services for API (could be reused between services or routes)
+- /src - frontend
+- /src/pages - component responsible for given url adress like /home -> Home.tsx component
+- /src/components - reusable components
+- /src/utils - utilities functions like axios instance
+
+## Styling guide
+
+Longer styles or potentially reuseable should be extracted to separated file.styles.ts. On the other hand smaller styles can be done with inline styles os sx MUI because it uses emotion (css-in-js) under the hood.
 
 ## Not done but nice to have
 
