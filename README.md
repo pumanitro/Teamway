@@ -54,6 +54,7 @@
 - /src/pages - component responsible for given url adress like /home -> Home.tsx component
 - /src/components - reusable components
 - /src/utils - utilities functions like axios instance
+- /sharedTypes - shared types between frontend and backend
 
 ## Styling guide
 

@@ -2,7 +2,8 @@ export const questionsDB = new Map([
   [
     "0",
     {
-      question: "When you have free time, do you prefer to:",
+      id: "0",
+      question: "When you have free time, do you prefer to",
       answers: [
         {
           answerText: "Spend time alone",
@@ -20,7 +21,8 @@ export const questionsDB = new Map([
   [
     "1",
     {
-      question: "In social situations, do you:",
+      id: "1",
+      question: "In social situations, do you",
       answers: [
         {
           answerText: "Enjoy meeting new people and making new friends",
@@ -38,7 +40,8 @@ export const questionsDB = new Map([
   [
     "2",
     {
-      question: "Are you more of a:",
+      id: "2",
+      question: "Are you more of a",
       answers: [
         {
           answerText: "Spontaneous person who enjoys taking risks",
@@ -56,7 +59,8 @@ export const questionsDB = new Map([
   [
     "3",
     {
-      question: "When making decisions, do you tend to rely more on:",
+      id: "3",
+      question: "When making decisions, do you tend to rely more on",
       answers: [
         {
           answerText: "Logic and reasoning",
@@ -74,7 +78,8 @@ export const questionsDB = new Map([
   [
     "4",
     {
-      question: "Would you describe yourself as:",
+      id: "4",
+      question: "Would you describe yourself as",
       answers: [
         {
           answerText: "Outgoing and talkative",
