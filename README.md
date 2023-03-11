@@ -1,8 +1,32 @@
 # Teamway
 
+## Technological stack
+
+### Frontend
+
+- React
+- Typescript
+- react-query (to handle async data + caching)
+- axios
+- react-router-dom
+- MUI (Material UI) (for styling)
+
+### Backend
+
+- Node.js
+- Typescript
+- Express
+- inMemoryDB (for storing data) - done as pure JS Map()
+
 ## How to run project in dev mode
 
 ### Frontend
+
+#### ENVs required
+
+`.env` file in root directory
+
+> REACT_BASE_URL=
 
 1. `yarn install` in root directory
 2. `yarn start` in root directory
@@ -18,17 +42,21 @@
 > Backend runs on `http://localhost:7777`
 
 ## Not done but nice to have
+
 [ ] authentication on backend + frontend to access API
 
 ## Available Scripts BE (Backend)
 
-### `yarn build` 
+### `yarn build`
+
 Compiles the typescript files to javascript files in `dist` directory
 
 ### `yarn start`
+
 Runs the compiled javascript files in `dist` directory
 
 ### `yarn dev`
+
 Runs the compiled javascript files in `dist` directory with nodemon and typescript watch mode
 
 ## Available Scripts FE (Frontend)
