@@ -4,6 +4,7 @@ import { HomePage } from "./pages/HomePage";
 import { ROUTING_KEYS } from "./utils/routingKeys";
 import { QuestionPage } from "./pages/QuestionPage";
 import { ScorePage } from "./pages/ScorePage";
+import { Page404 } from "./pages/Page404";
 
 export const router = createBrowserRouter([
   {
@@ -17,5 +18,9 @@ export const router = createBrowserRouter([
   {
     path: ROUTING_KEYS.SCORE,
     element: <ScorePage />,
+  },
+  {
+    path: "*",
+    element: <Page404 />,
   },
 ]);

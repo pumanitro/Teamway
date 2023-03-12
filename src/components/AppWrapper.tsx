@@ -6,9 +6,10 @@ import Person4Icon from "@mui/icons-material/Person4";
 type AppWrapperPropsType = {
   children: React.ReactNode;
   wrapperStyles?: React.CSSProperties;
+  cardStyles?: React.CSSProperties;
 };
 
-export const AppWrapper: FC<AppWrapperPropsType> = ({ children, wrapperStyles }) => {
+export const AppWrapper: FC<AppWrapperPropsType> = ({ children, wrapperStyles, cardStyles }) => {
   const theme = useTheme();
   const mdMatch = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -43,7 +44,7 @@ export const AppWrapper: FC<AppWrapperPropsType> = ({ children, wrapperStyles })
           ...wrapperStyles,
         }}
       >
-        <Card sx={{ p: 2, width: mdMatch ? "85%" : "70%", m: 4, minHeight: "60vh" }}>{children}</Card>
+        <Card sx={{ p: 2, width: mdMatch ? "85%" : "70%", m: 4, minHeight: "60vh", ...cardStyles }}>{children}</Card>
       </Box>
       <Box>
         <Typography variant="body2" align="center" sx={{ my: 2 }}>
