@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Alert,
   Box,
   Button,
   Card,
@@ -46,6 +47,20 @@ export const ScorePage = () => {
 
   const isExtrovert = extrovertPoints > introvertPoints;
   const points = isExtrovert ? extrovertPoints : introvertPoints;
+
+  // for accessing /score page without going through quiz
+  if (!points) {
+    return (
+      <AppWrapper>
+        <Alert severity="error" sx={{ mb: 2 }}>
+          You should not be here! You need to finish quiz first
+        </Alert>
+        <Link to={ROUTING_KEYS.HOME} style={{ textDecoration: "none" }}>
+          <Button variant="contained">Go to main page</Button>
+        </Link>
+      </AppWrapper>
+    );
+  }
 
   return (
     <AppWrapper>
