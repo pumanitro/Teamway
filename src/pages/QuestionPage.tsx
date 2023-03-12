@@ -91,6 +91,8 @@ export const QuestionPage = () => {
   const isTheLastQuestion = Number(id) === questionsAmount - 1;
   const isTheFirstQuestion = Number(id) === 0;
 
+  const radioGroupValue = questions.find((q) => q.id === id)?.answer?.id || null;
+
   return (
     <AppWrapper>
       <Stack direction="row" justifyContent="center" alignItems="center">
@@ -110,7 +112,7 @@ export const QuestionPage = () => {
               aria-labelledby="questions-radio-group"
               name="radio-buttons-group"
               id={`question-id`}
-              value={questions.find((q) => q.id === id)?.answer?.id || null}
+              value={radioGroupValue}
               onChange={onAnswerChange}
             >
               {answers.map((answer, index) => (
@@ -135,11 +137,15 @@ export const QuestionPage = () => {
           )}
           {isTheLastQuestion ? (
             <Link to={ROUTING_KEYS.SCORE} style={{ textDecoration: "none" }}>
-              <Button variant="contained">Finish</Button>
+              <Button variant="contained" disabled={!radioGroupValue}>
+                Finish
+              </Button>
             </Link>
           ) : (
             <Link to={ROUTING_KEYS.QUESTION(Number(id) + 1)} style={{ textDecoration: "none" }}>
-              <Button variant="contained">Next</Button>
+              <Button disabled={!radioGroupValue} variant="contained">
+                Next
+              </Button>
             </Link>
           )}
         </Stack>
