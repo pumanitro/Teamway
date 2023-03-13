@@ -6,6 +6,7 @@
     "moduleResolution": "node",
     "outDir": "./dist",
     "useUnknownInCatchVariables": false,
+    "isolatedModules": false,
     "noUnusedLocals": false
   },
   "include": ["server.ts"]
