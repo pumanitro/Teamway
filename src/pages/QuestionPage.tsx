@@ -136,13 +136,13 @@ export const QuestionPage = () => {
             </Link>
           )}
           {isTheLastQuestion ? (
-            <Link to={ROUTING_KEYS.SCORE} style={{ textDecoration: "none" }}>
+            <Link to={radioGroupValue ? ROUTING_KEYS.SCORE : "#"} style={{ textDecoration: "none" }}>
               <Button variant="contained" disabled={!radioGroupValue}>
                 Finish
               </Button>
             </Link>
           ) : (
-            <Link to={ROUTING_KEYS.QUESTION(Number(id) + 1)} style={{ textDecoration: "none" }}>
+            <Link to={radioGroupValue ? ROUTING_KEYS.QUESTION(Number(id) + 1) : "#"} style={{ textDecoration: "none" }}>
               <Button disabled={!radioGroupValue} variant="contained">
                 Next
               </Button>
