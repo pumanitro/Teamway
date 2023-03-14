@@ -2,6 +2,10 @@
 
 ⚠ ReactQueryDevtools are turn on in development mode. Don't be surprised with some opened additional window.
 
+![Home Page](./homePage.png)
+![Question Page](./questionPage.png)
+![Score Page](./scorePage.png)
+
 ## Technological stack
 
 ### Frontend
@@ -59,6 +63,13 @@
 ## Styling guide
 
 Longer styles or potentially reuseable should be extracted to separated file.styles.ts. On the other hand smaller styles can be done with inline styles os sx MUI because it uses emotion (css-in-js) under the hood.
+
+## Testing
+- unit tested backend with jest
+- e2e tested frontend & backend with cypress
+
+## RWD
+- done :)
 
 ## Not done but nice to have
 
