@@ -90,6 +90,10 @@ Runs the compiled javascript files in `dist` directory
 
 Runs the compiled javascript files in `dist` directory with nodemon and typescript watch mode
 
+### `yarn test`
+
+Runs unit tests with jest
+
 ## Available Scripts FE (Frontend)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
