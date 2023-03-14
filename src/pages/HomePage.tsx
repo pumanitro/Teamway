@@ -22,7 +22,12 @@ export const HomePage = () => {
         <Typography>Going through test you will see beautiful images created by AI. Enjoy!</Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: "flex-end" }}>
-        <Link to={ROUTING_KEYS.QUESTION(0)} style={{ textDecoration: "none" }} onClick={() => setQuestions([])}>
+        <Link
+          to={ROUTING_KEYS.QUESTION(0)}
+          style={{ textDecoration: "none" }}
+          onClick={() => setQuestions([])}
+          data-test-id="startTest"
+        >
           <Button variant="contained">Start test</Button>
         </Link>
       </CardActions>
